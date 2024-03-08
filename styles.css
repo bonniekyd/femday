@@ -1,0 +1,10 @@
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#song,
+#image,
+#text {
+    margin-top: 20px;
+}
