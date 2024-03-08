@@ -10,5 +10,5 @@ function playSong() {
 
     // Display image and text based on the entered name
     imageElement.innerHTML = '<img src="image.jpg" alt="Image">';
-    textElement.innerHTML = 'Hello, ' + name + '! Enjoy the song!';
+    textElement.innerHTML = 'Hello, ' + name + '! Enjoy the song! LMAO';
 }
