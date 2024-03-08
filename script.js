@@ -1,14 +1,22 @@
-function playSong() {
-    var name = document.getElementById('nameInput').value;
-    var songElement = document.getElementById('song');
-    var imageElement = document.getElementById('image');
-    var textElement = document.getElementById('text');
+function confirmSelection() {
+    var nameForm = document.getElementById('nameForm');
+    var resultDiv = document.getElementById('result');
+    var image = document.getElementById('image');
+    var audio = document.getElementById('audio');
 
-    // Play the song (replace 'song.mp3' with your song file path)
-    var audio = new Audio('song.mp3');
-    audio.play();
+    var selectedName = null;
+    var checkboxes = nameForm.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            selectedName = checkbox.value;
+        }
+    });
 
-    // Display image and text based on the entered name
-    imageElement.innerHTML = '<img src="image.jpg" alt="Image">';
-    textElement.innerHTML = 'Hello, ' + name + '! Enjoy the song! LMAO';
+    if (selectedName) {
+        resultDiv.classList.remove('hidden');
+        image.src = selectedName.toLowerCase() + '.png';
+        audio.src = selectedName.toLowerCase() + '.mp3';
+    } else {
+        alert('Please select a name before confirming.');
+    }
 }
